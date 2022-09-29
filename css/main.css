@@ -1,8 +1,14 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Roboto', Helvetica, sans-serif;
-  background-color: grey;
+  /* lightens background colour to increase contrast from text and improve accessibility  */
+  background-color: #dededf;
   margin: 0;
   padding: 0;
+  font-size: 18px;
 }
 
 h1,
@@ -14,17 +20,46 @@ h6 {
   font-family: 'Stick No Bills', 'Roboto', Helvetica, sans-serif;
 }
 
+/* increases heading font sizes to improve readability */
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
 .container {
   max-width: 1080px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 2rem;
+}
+
+/* styles the skip links */
+.skip-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* hides the skip links, but maintains accessibility */
+.skip-links a {
+  position: absolute;
+  top: -3em;
+}
+
+/* displays skip link when in the focus state */
+.skip-links a:focus {
+  top: 0;
+  padding: 0 30px;
 }
 
 img {
   width: 100%;
 }
 
-.main-nav ul {
+nav ul {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
@@ -32,16 +67,29 @@ img {
   padding: 0;
 }
 
-.main-nav ul li {
+nav ul li {
   flex: 1;
   text-align: center;
 }
 
-.main-nav ul li a {
+/* styles the navigation to improve accessibility */
+
+nav ul li a {
   display: block;
   color: inherit;
+  background-color: #a5d2d3;
   text-decoration: none;
   font-size: 1.25rem;
+  padding: 10px;
+}
+
+nav ul li a:hover, a:active {
+  background-color: #e6c5de;
+}
+
+nav ul li a:visited {
+  background-color: #909090;
+  color: #ffffff;
 }
 
 form input,
@@ -66,6 +114,6 @@ form button {
   text-transform: uppercase;
 }
 
-.site-footer {
+footer {
   padding: 2rem 0;
 }
