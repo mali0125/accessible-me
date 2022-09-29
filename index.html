@@ -14,54 +14,77 @@
 
 <body>
   <div class="container">
-    <div class="site-header">
-      <h1>Jam Box Studios</h1>
-      <div class="main-nav">
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Products</a></li>
-          <li><a href="#">Reservation</a></li>
-          <li><a href="#">Studio</a></li>
+    <!-- adds skip links -->
+    <ul role="list" class="skip-links">
+      <li role="listitem"><a href="#nav" aria-label="Skip to the main navigation">Skip to main nav</a></li>
+      <li role="listitem"><a href="#main" aria-label="Skip to the main content">Skip to main content</a></li>
+    </ul>
+    <!-- improves html semantic by replacing div class="site-header" with header -->
+    <header role="banner">
+      <h1 role="heading">Jam Box Studios</h1>
+      <!-- improves html semantic by replacing div class="main-nav" with nav -->
+      <nav role="navigation" id="nav">
+        <ul role="list">
+          <li role="listitem"><a href="#" aria-label="View the Home page">Home</a></li>
+          <li role="listitem"><a href="#" aria-label="View the Products page">Products</a></li>
+          <li role="listitem"><a href="#" aria-label="View the Reservation page">Reservation</a></li>
+          <li role="listitem"><a href="#" aria-label="View the Studio page">Studio</a></li>
         </ul>
-      </div>
-      <img src="https://placekitten.com/1200/900" class="banner">
-    </div>
-    <div class="main-content">
-      <h1>Welcome to Jam Box</h1>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus laboriosam praesentium nostrum ipsa eveniet, officia deserunt cumque eius esse enim, ipsam accusantium autem nihil quaerat sequi perferendis optio quia veritatis.</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam perferendis expedita sed itaque odit ipsam omnis, eos voluptates magni fugit culpa voluptatibus, inventore eaque, eligendi voluptatum! Voluptate iusto error voluptatibus.</p>
+      </nav>
+      <img src="https://placekitten.com/1200/900" alt="image of kitten" class="banner">
+    </header>
+    <!-- improves html semantic by replacing div class="main-content" with main -->
+    <main role="main" id="main">
+      <!-- improves html semantic by adding article tag -->
+      <article role="article">
+        <!-- improves html semantic by replacing h1 with h2 -->
+        <h2 role="heading">Welcome to Jam Box</h2>
+        <p role="paragraph">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus laboriosam praesentium nostrum ipsa eveniet, officia deserunt cumque eius esse enim, ipsam accusantium autem nihil quaerat sequi perferendis optio quia veritatis.</p>
+        <p role="paragraph">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam perferendis expedita sed itaque odit ipsam omnis, eos voluptates magni fugit culpa voluptatibus, inventore eaque, eligendi voluptatum! Voluptate iusto error voluptatibus.</p>
+      </article>
       <div class="owner">
-        <h1>Meet the owner</h1>
-        <ul>
-          <li>Name: John Doe</li>
-          <li>Title: CEO</li>
-          <li>Email: johnjoe@jambox.ca</li>
-          <li>Phone: 613-000-0000</li>
+        <!-- improves html semantic by replacing h1 with h2 -->
+        <h2 role="heading">Meet the owner</h2>
+        <ul role="list" itemscope itemtype="https://schema.org/Person">
+          <li role="listitem" itemprop="name">Name: John Doe</li>
+          <li role="listitem" itemprop="jobTitle">Title: CEO</li>
+          <li role="listitem" itemprop="email">Email: johnjoe@jambox.ca</li>
+          <li role="listitem" itemprop="telephone">Phone: 613-000-0000</li>
         </ul>
-        <h1>Address</h1>
-        <p>
-          Jambox Studios
-          123 Guitar Road,
-          Musicville, Danceistan
-          B3T 0L0
-        </p>
+        <!-- improves html semantic by replacing h1 with h2 -->
+        <h2 role="heading">Address</h2>
+        <!-- improves html semantic by replacing p tag with ul tag to add a schema -->
+        <ul role="list" itemscope itemtype="https://schema.org/PostalAddress">
+          <li role="listitem" itemprop="address">
+            <span itemprop="location">Jambox Studios</span>
+            <span itemprop="streetAddress">123 Guitar Road,</span>
+            <span itemprop="addressLocality">Musicville,</span>
+            <span itemprop="addressCountry">Danceistan </span>
+            <span itemprop="postalCode">B3T 0L0</span> 
+          </li>
+        </ul>
       </div>
       <div class="contact-section">
-        <h1>Contact Us</h1>
-        <form action="thanks.html">
+        <!-- improves html semantic by replacing h1 with h2 -->
+        <h2 role="heading">Contact Us</h2>
+        <form role="form" action="thanks.html">
           <label>Full Name</label>
-          <input type="text" placeholder="Full Name">
-          <input type="text" placeholder="Email">
-          <input type="text" placeholder="Subject">
+          <input role="textbox" type="text" placeholder="Full Name">
+          <label>Email Address</label>
+          <input role="textbox" type="text" placeholder="Email">
+          <label>Subject</label>
+          <input role="textbox" type="text" placeholder="Subject">
           <b>Your Message</b>
-          <textarea></textarea>
-          <button type="submit">Send</button>
+          <textarea role="textbox"></textarea>
+          <button role="button" type="submit">Send</button>
         </form>
       </div>
-    </div>
-    <div class="site-footer">
+    </main>
+    <!-- improves html semantic by replacing div class="site-footer" with footer -->
+    <footer role="contentinfo">
       &copy; 2021 Jam Box Studios
-    </div>
+      <a href="#top" aria-label="Go back to the top">Back to Top</a>
+    </footer>
   </div>
 </body>
 
